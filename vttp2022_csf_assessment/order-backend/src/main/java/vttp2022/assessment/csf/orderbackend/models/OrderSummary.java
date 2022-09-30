@@ -1,5 +1,8 @@
 package vttp2022.assessment.csf.orderbackend.models;
 
+import jakarta.json.Json;
+import jakarta.json.JsonValue;
+
 // IMPORTANT: You can add to this class, but you cannot delete its original content
 
 public class OrderSummary {
@@ -19,5 +22,13 @@ public class OrderSummary {
 
 	public void setAmount(Float amount) { this.amount = amount; }
 	public Float getAmount() { return this.amount; }
+
+
+	public JsonValue toJson() {
+		return Json.createObjectBuilder()
+            .add("orderId", orderId)
+            .add("amount", amount)
+            .build();
+	}
 
 }
