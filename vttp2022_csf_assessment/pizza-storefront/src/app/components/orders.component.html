@@ -1,0 +1,18 @@
+<h2>Orders for {{ email }}</h2>
+
+<table>
+    <tr *ngFor="let orderDetail of orderDetails">
+            <div>
+                <td>Order Id: </td>
+                <td>{{ orderDetail.orderId }}</td>
+            </div>
+            <div>
+                <td>Order Amount: </td>
+                <td>{{ orderDetail.amount | currency }}</td>
+            </div>
+            
+</table>
+
+<button type="button" [routerLink]="['/']">Back to Ordering</button>
+
+
